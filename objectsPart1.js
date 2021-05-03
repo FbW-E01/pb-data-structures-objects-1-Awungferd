@@ -41,20 +41,7 @@ function getObjectValues(profiling) {
 }
 
 /* **3. Add A Method.**
-Create an object and add a method to that object which prints the values of the objects in a string. 
-* Example
-```javascript
-let person = {
-  firstName: "Michael",
-  lastName: "Smith", 
-  job: "driver",
-  age: 20, 
-  city: Paris
-}
-```
-* Example of Expected Output 
-"Michael Smith is a 20 year old driver in Paris".
- */
+Create an object and add a method to that object which prints the values of the objects in a string. */
 
 let profile = {
   firstName: "Michael",
@@ -68,4 +55,86 @@ let profile = {
     );
   },
 };
-profile.print()
+profile.print();
+
+//## Bonus Questions
+
+/* **1. Convert keys and values into an array.** 
+Create a function that converts an object into an array of keys and values. 
+* Examples:
+```javascript */
+objectToArray({
+  A: 1,
+  B: 2,
+  C: 3,
+});
+function objectToArray(iterate) {
+  let entries = Object.entries(iterate);
+  console.log(entries);
+}
+
+objectToArray2({
+  cats: 1,
+  dogs: 2,
+  turtles: 4,
+});
+
+function objectToArray2(arrayed) {
+  let entries = Object.entries(arrayed);
+  console.log(entries);
+}
+
+/**
+ 
+**2. List Properties.**
+Create a function that returns an array of **properties** of a javascript object.*/
+
+let student = {
+  name: "Mike",
+  class: "4A",
+  course: "English",
+};
+function print() {
+  let keys = Object.keys(student);
+  console.log(keys);
+}
+print();
+
+/*
+**3. Merge.**
+Create a function that takes two objects as its parameters and merges them together into a new object. 
+
+**Extra Credit:** What happens if you merge two objects with the same property values? In merging these two objects, do you expect to change either or both of the original objects? Why or why not? Comment your answers.
+ */
+
+let first = { firstName: "John" };
+let last = { lastName: "Smith" };
+function merger() {
+  let givenName = first;
+  let surname = last;
+  let fullNames = { ...givenName, ...surname };
+
+  console.log(fullNames);
+}
+merger();
+
+/* **4. Switch Keys and Values.**
+Create a function to get a copy of an object. The copy must switch the keys and values.
+* Example: 
+```javascript */
+let personality = {
+    name: "John",
+    job: "teacher",
+   
+}
+function invertOrder(rev){
+  var retobj={};
+  for(var key in rev){
+    retobj[rev[key]] = key;
+  }
+  return retobj;
+}
+personality = invertOrder(personality)
+console.log(personality)
+//personality.print()
+

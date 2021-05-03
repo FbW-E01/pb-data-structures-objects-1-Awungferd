@@ -113,4 +113,3 @@ Write a program that takes an object and returns an array which contains two arr
 ```javascript
 { a: 1, b: 2, c: 3 } ➞ [["a", "b", "c"], [1, 2, 3]]
 {key: true} ➞ [["key"], [true]]
-```
